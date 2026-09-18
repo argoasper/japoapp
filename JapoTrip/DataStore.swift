@@ -28,8 +28,6 @@ final class DataStore: ObservableObject {
     /// Category filter last used in each city, so leaving and re-entering a
     /// city (the normal rhythm of a day of sightseeing) doesn't reset it.
     @Published var lastCategoryFilter: [String: String] = [:]
-    /// Status filter ("Tots"/"Pendents"/"Vistos") last used in each city.
-    @Published var lastStatusFilter: [String: String] = [:]
 
     /// Set when `data.json` is missing, corrupt, or yields zero places, so the
     /// UI can explain what's wrong instead of silently showing an empty app.
@@ -53,7 +51,7 @@ final class DataStore: ObservableObject {
     private var saveWorkItem: DispatchWorkItem?
 
     init() {
-        guard let url = Bundle.module.url(forResource: "data", withExtension: "json"),
+        guard let url = AppResources.bundle.url(forResource: "data", withExtension: "json"),
               let data = try? Data(contentsOf: url) else {
             self.appData = AppData(cities: [], cityOrder: [], catMeta: [:], catOrder: [], places: [])
             self.visited = []
@@ -243,7 +241,21 @@ final class DataStore: ObservableObject {
         return result
     }
 
-    /// All 235 places, in city/seq order — backs the home-screen global search.
+    /// Places of a city filtered by the box the user tapped (all / pending / visited).
+    func places(for city: String, mode: PlaceListMode) -> [Place] {
+        let base = orderedPlaces(for: city)
+        switch mode {
+        case .all: return base
+        case .pending: return base.filter { !isVisited($0.id) }
+        case .visited: return base.filter { isVisited($0.id) }
+        }
+    }
+
+    func pendingCount(for city: String) -> Int {
+        places(for: city).count - visitedCount(for: city)
+    }
+
+    /// All places, in city/seq order — backs the home-screen global search.
     var allPlaces: [Place] { appData.places }
 
     /// Applies a drag-to-reorder move within a city's place list.

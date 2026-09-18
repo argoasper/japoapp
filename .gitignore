@@ -1,0 +1,14 @@
+# macOS
+.DS_Store
+
+# Xcode
+xcuserdata/
+*.xcuserstate
+build/
+DerivedData/
+
+# Còpies de seguretat locals (l'històric de git ja les conserva)
+_backups/
+
+# Sortides temporals de Claude
+Claude outputs/

@@ -9,6 +9,7 @@ struct PlaceDetailSheet: View {
     @State private var wikiPhotoURL: URL?
     @State private var wikiArticleURL: URL?
     @State private var photoFromLiveSearch = false
+    @State private var mapChoice: MapChoice?
     @Environment(\.dismiss) private var dismiss
 
     private var isVisited: Bool { store.isVisited(place.id) }
@@ -53,9 +54,9 @@ struct PlaceDetailSheet: View {
                         Text(place.name)
                             .font(.appTitle)
 
-                        if !place.day.isEmpty {
-                            Text(place.day)
-                                .font(.appSubheadline)
+                        if !place.zone.isEmpty {
+                            Label(place.zone, systemImage: "mappin.and.ellipse")
+                                .font(.appCaption)
                                 .foregroundStyle(.secondary)
                         }
 
@@ -85,6 +86,18 @@ struct PlaceDetailSheet: View {
                             BigMapButton(kind: .apple, urlString: place.apple, prominent: false)
                         }
                         .padding(.top, 4)
+
+                        Button {
+                            mapChoice = MapChoice(title: "Com anar a \(place.name)",
+                                                  google: MapLinks.googleDirections(to: place),
+                                                  apple: MapLinks.appleDirections(to: place))
+                        } label: {
+                            Label("Com anar-hi des d'on soc (a peu)", systemImage: "figure.walk")
+                                .frame(maxWidth: .infinity)
+                                .padding(.vertical, 4)
+                        }
+                        .buttonStyle(.borderedProminent)
+                        .tint(tint)
 
                         if let wikiArticleURL {
                             Link(destination: wikiArticleURL) {
@@ -133,6 +146,7 @@ struct PlaceDetailSheet: View {
             }
         }
         .onDisappear { reader.stop() }
+        .mapChoiceDialog($mapChoice)
     }
 
     private func apply(_ lookup: WikipediaImageFetcher.Lookup) {
@@ -178,7 +192,7 @@ struct PlaceDetailSheet: View {
         VStack(alignment: .leading, spacing: 10) {
             Text(place.desc)
                 .font(.appBody)
-                .lineLimit(descriptionExpanded ? nil : 3)
+                .lineLimit(descriptionExpanded ? nil : 5)
                 .fixedSize(horizontal: false, vertical: true)
 
             HStack(spacing: 16) {

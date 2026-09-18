@@ -1,4 +1,19 @@
 import Foundation
+import SwiftUI
+
+/// On viuen els recursos (data.json): `Bundle.module` quan es compila com a
+/// App Playground / paquet Swift (.swiftpm) i `Bundle.main` en un projecte
+/// d'Xcode normal (.xcodeproj), on `Bundle.module` no existeix. Així els
+/// mateixos fitxers serveixen per als dos projectes sense tocar res.
+enum AppResources {
+    static var bundle: Bundle {
+        #if SWIFT_PACKAGE
+        return Bundle.module
+        #else
+        return Bundle.main
+        #endif
+    }
+}
 
 struct CityRoute: Codable, Hashable, Identifiable {
     let label: String
@@ -28,7 +43,9 @@ struct Place: Codable, Identifiable, Hashable {
     let cityName: String
     let cityIcon: String
     let cityColor: String
-    let day: String
+    /// Zona o recorregut dins la ciutat (abans era el «dia» de l'itinerari;
+    /// ja no s'hi fa cap referència a dies concrets).
+    let zone: String
     let order: Int
     let name: String
     let cats: [String]
@@ -71,7 +88,7 @@ extension Place {
     /// Everything the search field should be able to match, as one string.
     /// Built once per place in `DataStore` — never recomputed per keystroke.
     var searchSource: String {
-        ([name, desc, address, notes, day] + tags + cats).joined(separator: " ")
+        ([name, desc, address, notes, zone] + tags + cats).joined(separator: " ")
     }
 }
 
@@ -88,4 +105,38 @@ struct AppData: Codable {
     let catMeta: [String: CategoryInfo]
     let catOrder: [String]
     let places: [Place]
+}
+
+/// Les cinc «caixes» que apareixen en entrar a una ciutat (estil app
+/// Recordatoris) i les pantalles a què porten.
+enum CityScreen: Hashable {
+    case places(city: String, mode: PlaceListMode)
+    case routes(city: String)
+    case transports(city: String)
+}
+
+enum PlaceListMode: String, Hashable, CaseIterable {
+    case all, pending, visited
+
+    var title: String {
+        switch self {
+        case .all: return "Tots els llocs"
+        case .pending: return "Llocs pendents"
+        case .visited: return "Llocs vistos"
+        }
+    }
+    var icon: String {
+        switch self {
+        case .all: return "tray.full.fill"
+        case .pending: return "circle"
+        case .visited: return "checkmark.circle.fill"
+        }
+    }
+    var color: Color {
+        switch self {
+        case .all: return .gray
+        case .pending: return .orange
+        case .visited: return .green
+        }
+    }
 }

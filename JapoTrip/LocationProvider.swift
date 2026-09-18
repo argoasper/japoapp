@@ -15,14 +15,38 @@ final class LocationProvider: NSObject, ObservableObject, CLLocationManagerDeleg
 
     private var timeoutTask: Task<Void, Never>?
     private let timeoutSeconds: UInt64 = 12
+    /// While a list is on screen we keep updating so the "a prop meu" order
+    /// follows the user as they walk (v4). Stopped on disappear.
+    private var continuous = false
 
     override init() {
         super.init()
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+        manager.distanceFilter = 30
     }
 
+    /// One-shot fix (used by the route builder).
     func request() {
+        continuous = false
+        begin()
+        if manager.authorizationStatus != .notDetermined { manager.requestLocation() }
+    }
+
+    /// Keeps the position updated while the screen is visible.
+    func startUpdating() {
+        continuous = true
+        begin()
+        if manager.authorizationStatus != .notDetermined { manager.startUpdatingLocation() }
+    }
+
+    func stopUpdating() {
+        continuous = false
+        manager.stopUpdatingLocation()
+        cancel()
+    }
+
+    private func begin() {
         errorMessage = nil
         let status = manager.authorizationStatus
         // Recomputed on every request so that enabling the permission in
@@ -33,12 +57,10 @@ final class LocationProvider: NSObject, ObservableObject, CLLocationManagerDeleg
             return
         }
         reducedAccuracy = (manager.accuracyAuthorization == .reducedAccuracy)
-        isLocating = true
+        if location == nil { isLocating = true }
         startTimeout()
         if status == .notDetermined {
             manager.requestWhenInUseAuthorization()
-        } else {
-            manager.requestLocation()
         }
     }
 
@@ -57,7 +79,9 @@ final class LocationProvider: NSObject, ObservableObject, CLLocationManagerDeleg
             try? await Task.sleep(nanoseconds: seconds * 1_000_000_000)
             guard !Task.isCancelled, let self, self.isLocating else { return }
             self.isLocating = false
-            self.errorMessage = "No s'ha pogut obtenir la ubicació. Torna-ho a provar a l'exterior."
+            if self.location == nil {
+                self.errorMessage = "No s'ha pogut obtenir la ubicació. Torna-ho a provar a l'exterior."
+            }
         }
     }
 
@@ -66,7 +90,8 @@ final class LocationProvider: NSObject, ObservableObject, CLLocationManagerDeleg
         timeoutTask = nil
         isLocating = false
         if let newLocation { location = newLocation }
-        errorMessage = failure
+        // A transient failure while we already have a fix is not worth a warning.
+        errorMessage = (location == nil) ? failure : nil
     }
 
     nonisolated func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
@@ -75,7 +100,7 @@ final class LocationProvider: NSObject, ObservableObject, CLLocationManagerDeleg
             case .authorizedWhenInUse, .authorizedAlways:
                 self.authDenied = false
                 self.reducedAccuracy = (manager.accuracyAuthorization == .reducedAccuracy)
-                manager.requestLocation()
+                if self.continuous { manager.startUpdatingLocation() } else { manager.requestLocation() }
             case .denied, .restricted:
                 self.authDenied = true
                 self.settle(location: nil, failure: nil)

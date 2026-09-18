@@ -37,6 +37,13 @@ struct ContentView: View {
             .navigationDestination(for: String.self) { cityId in
                 CityDetailView(cityId: cityId)
             }
+            .navigationDestination(for: CityScreen.self) { screen in
+                switch screen {
+                case .places(let city, let mode): CityPlacesListView(cityId: city, mode: mode)
+                case .routes(let city): CityRoutesView(cityId: city)
+                case .transports(let city): TransportsView(cityId: city)
+                }
+            }
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     toolsMenu
@@ -168,7 +175,7 @@ struct ContentView: View {
                                 Text(place.name)
                                     .font(.appSubheadlineBold)
                                     .foregroundStyle(.primary)
-                                Text("\(place.cityIcon) \(place.cityName) · \(place.day)")
+                                Text("\(place.cityIcon) \(place.cityName)" + (store.appData.catMeta[place.cats.first ?? ""].map { " · \($0.label)" } ?? ""))
                                     .font(.appCaption)
                                     .foregroundStyle(.secondary)
                                     .lineLimit(1)
