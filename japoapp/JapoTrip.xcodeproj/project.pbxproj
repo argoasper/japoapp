@@ -1,0 +1,369 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		11F749E6A19FFA1721A6D65B /* BackupDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F49ABFA99B0D5C7B9F9EA8 /* BackupDocument.swift */; };
+		28EFBCD210174F5782232B0B /* CityDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713C04556E27D0630833ADCA /* CityDetailView.swift */; };
+		309409BE62F34FC43A454523 /* CityExtras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82687D868DAEEBE4EF58F8CA /* CityExtras.swift */; };
+		B22B10B8BF5F8949722D96EB /* CityPlacesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C139B7ED5408A6FECEBA7574 /* CityPlacesListView.swift */; };
+		5E9152C57D6ABBF8644A45C7 /* CityRoutesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C58272BBC2C8CB21F2669D7 /* CityRoutesView.swift */; };
+		C805E8F33AFCC533A0732072 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0350701C06C6C161611FA81C /* ContentView.swift */; };
+		23F1C8C5AF78B6A358A3492A /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C388670F5606277584A9F2FF /* DataStore.swift */; };
+		A8ABF1ECA2E4C2A9BBD54EAD /* JapoTripApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FD0D8998DD7D50CE8EE2FE /* JapoTripApp.swift */; };
+		F8D64A355C39D94888C06F1A /* LocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571EA62B7905598826B037CA /* LocationProvider.swift */; };
+		AF80C975EDE83783C65252A9 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBF1603231BDC6068650FE3 /* Models.swift */; };
+		43BE56718DECCF8690768A64 /* PhotoCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7508F79B83E3A7288B9A94DE /* PhotoCache.swift */; };
+		3C91E318C910455B435DFDAB /* PlaceDetailSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3685D434DA89C9967B0FF76B /* PlaceDetailSheet.swift */; };
+		7BF526CF666B848A03469CB1 /* PlaceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB8008515A3CF7E374A627E /* PlaceRow.swift */; };
+		12AC7DC452D26B30A73A2D85 /* ProgressScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8F656BE77F72020EF753A0 /* ProgressScreen.swift */; };
+		AF38145A1CA2544D79C946FA /* SpeechReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0653915F1ED965A34DEC8E49 /* SpeechReader.swift */; };
+		2FB3D9A5834086B480B47AF2 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E914F9C2F932517028BED0 /* Theme.swift */; };
+		CD42CAA501AED5CDC4D054BE /* TransportData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AF2783728038833DD84641 /* TransportData.swift */; };
+		A6AF341EF1FECCA55F515F59 /* TransportsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D73F623E917E1A14B01B1A /* TransportsView.swift */; };
+		FCA238AB5FD27C6037A5A06C /* WikipediaImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD7AE723D13DF5204018D50 /* WikipediaImageFetcher.swift */; };
+		8B7957227A600B6873F77A95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35F874662CF308D40A6DB626 /* Assets.xcassets */; };
+		F430E321B61CFF67D97C7878 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 25D81A53F906B63E3E9D1C08 /* data.json */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		02722E249E1D6BF110BF232C /* JapoTrip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JapoTrip.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84F49ABFA99B0D5C7B9F9EA8 /* BackupDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BackupDocument.swift"; sourceTree = "<group>"; };
+		713C04556E27D0630833ADCA /* CityDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CityDetailView.swift"; sourceTree = "<group>"; };
+		82687D868DAEEBE4EF58F8CA /* CityExtras.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CityExtras.swift"; sourceTree = "<group>"; };
+		C139B7ED5408A6FECEBA7574 /* CityPlacesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CityPlacesListView.swift"; sourceTree = "<group>"; };
+		5C58272BBC2C8CB21F2669D7 /* CityRoutesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CityRoutesView.swift"; sourceTree = "<group>"; };
+		0350701C06C6C161611FA81C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView.swift"; sourceTree = "<group>"; };
+		C388670F5606277584A9F2FF /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataStore.swift"; sourceTree = "<group>"; };
+		B2FD0D8998DD7D50CE8EE2FE /* JapoTripApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JapoTripApp.swift"; sourceTree = "<group>"; };
+		571EA62B7905598826B037CA /* LocationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationProvider.swift"; sourceTree = "<group>"; };
+		ECBF1603231BDC6068650FE3 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Models.swift"; sourceTree = "<group>"; };
+		7508F79B83E3A7288B9A94DE /* PhotoCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhotoCache.swift"; sourceTree = "<group>"; };
+		3685D434DA89C9967B0FF76B /* PlaceDetailSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlaceDetailSheet.swift"; sourceTree = "<group>"; };
+		5CB8008515A3CF7E374A627E /* PlaceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlaceRow.swift"; sourceTree = "<group>"; };
+		5D8F656BE77F72020EF753A0 /* ProgressScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProgressScreen.swift"; sourceTree = "<group>"; };
+		0653915F1ED965A34DEC8E49 /* SpeechReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpeechReader.swift"; sourceTree = "<group>"; };
+		96E914F9C2F932517028BED0 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theme.swift"; sourceTree = "<group>"; };
+		57AF2783728038833DD84641 /* TransportData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TransportData.swift"; sourceTree = "<group>"; };
+		77D73F623E917E1A14B01B1A /* TransportsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TransportsView.swift"; sourceTree = "<group>"; };
+		CDD7AE723D13DF5204018D50 /* WikipediaImageFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WikipediaImageFetcher.swift"; sourceTree = "<group>"; };
+		35F874662CF308D40A6DB626 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Assets.xcassets"; sourceTree = "<group>"; };
+		25D81A53F906B63E3E9D1C08 /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "data.json"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		15B7EA3FFA0E3381870CAA4C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9CF56CD0989AB0CFB78F358A = {
+			isa = PBXGroup;
+			children = (
+				4D4FF54A225762075CA8E499 /* JapoTrip */,
+				5A3650E351883F793531830A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4D4FF54A225762075CA8E499 /* JapoTrip */ = {
+			isa = PBXGroup;
+			children = (
+				84F49ABFA99B0D5C7B9F9EA8 /* BackupDocument.swift */,
+				713C04556E27D0630833ADCA /* CityDetailView.swift */,
+				82687D868DAEEBE4EF58F8CA /* CityExtras.swift */,
+				C139B7ED5408A6FECEBA7574 /* CityPlacesListView.swift */,
+				5C58272BBC2C8CB21F2669D7 /* CityRoutesView.swift */,
+				0350701C06C6C161611FA81C /* ContentView.swift */,
+				C388670F5606277584A9F2FF /* DataStore.swift */,
+				B2FD0D8998DD7D50CE8EE2FE /* JapoTripApp.swift */,
+				571EA62B7905598826B037CA /* LocationProvider.swift */,
+				ECBF1603231BDC6068650FE3 /* Models.swift */,
+				7508F79B83E3A7288B9A94DE /* PhotoCache.swift */,
+				3685D434DA89C9967B0FF76B /* PlaceDetailSheet.swift */,
+				5CB8008515A3CF7E374A627E /* PlaceRow.swift */,
+				5D8F656BE77F72020EF753A0 /* ProgressScreen.swift */,
+				0653915F1ED965A34DEC8E49 /* SpeechReader.swift */,
+				96E914F9C2F932517028BED0 /* Theme.swift */,
+				57AF2783728038833DD84641 /* TransportData.swift */,
+				77D73F623E917E1A14B01B1A /* TransportsView.swift */,
+				CDD7AE723D13DF5204018D50 /* WikipediaImageFetcher.swift */,
+				35F874662CF308D40A6DB626 /* Assets.xcassets */,
+				25D81A53F906B63E3E9D1C08 /* data.json */,
+			);
+			path = JapoTrip;
+			sourceTree = "<group>";
+		};
+		5A3650E351883F793531830A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				02722E249E1D6BF110BF232C /* JapoTrip.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4A9E82837EBEC59D2C06D6A9 /* JapoTrip */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0A5E2F56BC325061E460C614 /* Build configuration list for PBXNativeTarget "JapoTrip" */;
+			buildPhases = (
+				899E48F69C810304F7B184E0 /* Sources */,
+				15B7EA3FFA0E3381870CAA4C /* Frameworks */,
+				188F85D2B20C50ECE086067C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JapoTrip;
+			productName = JapoTrip;
+			productReference = 02722E249E1D6BF110BF232C /* JapoTrip.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1547F2CF04228BE101A5F5A3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					4A9E82837EBEC59D2C06D6A9 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+				};
+			};
+			buildConfigurationList = EB199A1B7A4E5485E0EDA6DB /* Build configuration list for PBXProject "JapoTrip" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9CF56CD0989AB0CFB78F358A;
+			productRefGroup = 5A3650E351883F793531830A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4A9E82837EBEC59D2C06D6A9 /* JapoTrip */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		188F85D2B20C50ECE086067C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B7957227A600B6873F77A95 /* Assets.xcassets in Resources */,
+				F430E321B61CFF67D97C7878 /* data.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		899E48F69C810304F7B184E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11F749E6A19FFA1721A6D65B /* BackupDocument.swift in Sources */,
+				28EFBCD210174F5782232B0B /* CityDetailView.swift in Sources */,
+				309409BE62F34FC43A454523 /* CityExtras.swift in Sources */,
+				B22B10B8BF5F8949722D96EB /* CityPlacesListView.swift in Sources */,
+				5E9152C57D6ABBF8644A45C7 /* CityRoutesView.swift in Sources */,
+				C805E8F33AFCC533A0732072 /* ContentView.swift in Sources */,
+				23F1C8C5AF78B6A358A3492A /* DataStore.swift in Sources */,
+				A8ABF1ECA2E4C2A9BBD54EAD /* JapoTripApp.swift in Sources */,
+				F8D64A355C39D94888C06F1A /* LocationProvider.swift in Sources */,
+				AF80C975EDE83783C65252A9 /* Models.swift in Sources */,
+				43BE56718DECCF8690768A64 /* PhotoCache.swift in Sources */,
+				3C91E318C910455B435DFDAB /* PlaceDetailSheet.swift in Sources */,
+				7BF526CF666B848A03469CB1 /* PlaceRow.swift in Sources */,
+				12AC7DC452D26B30A73A2D85 /* ProgressScreen.swift in Sources */,
+				AF38145A1CA2544D79C946FA /* SpeechReader.swift in Sources */,
+				2FB3D9A5834086B480B47AF2 /* Theme.swift in Sources */,
+				CD42CAA501AED5CDC4D054BE /* TransportData.swift in Sources */,
+				A6AF341EF1FECCA55F515F59 /* TransportsView.swift in Sources */,
+				FCA238AB5FD27C6037A5A06C /* WikipediaImageFetcher.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		6DDA5B590DED77F20C8CB20A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C0590B10D542038F4D0F1132 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B4FB46421B1B7C8E8D08E14B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = 43M4NL6S5P;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = JapoTrip;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Fem servir la teva ubicacio nomes per ordenar els llocs de cada ciutat per proximitat i calcular la ruta mes propera.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 4.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cesc.japotrip;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+
+			};
+			name = Debug;
+		};
+		252252C31735291058017AE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = 43M4NL6S5P;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = JapoTrip;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Fem servir la teva ubicacio nomes per ordenar els llocs de cada ciutat per proximitat i calcular la ruta mes propera.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 4.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cesc.japotrip;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EB199A1B7A4E5485E0EDA6DB /* Build configuration list for PBXProject "JapoTrip" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6DDA5B590DED77F20C8CB20A /* Debug */,
+				C0590B10D542038F4D0F1132 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0A5E2F56BC325061E460C614 /* Build configuration list for PBXNativeTarget "JapoTrip" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B4FB46421B1B7C8E8D08E14B /* Debug */,
+				252252C31735291058017AE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1547F2CF04228BE101A5F5A3 /* Project object */;
+}
